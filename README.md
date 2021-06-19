@@ -15,12 +15,12 @@ docker build -t codeformyself_excavator_ws_image:2021.06 .
 
 for MacOS 
 ```
-docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="`pwd`",dst=/workdir codeformyself_excavator_ws_image 
+docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="`pwd`",dst=/workdir codeformyself_excavator_ws_image:2021.06 
 ```
 
 for Windows
 ```
-docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="%cd%",dst=/workdir codeformyself_excavator_ws_image 
+docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="%cd%",dst=/workdir codeformyself_excavator_ws_image:2021.06 
 ```
 
 ## 3. access jupyter-notebook via browser
