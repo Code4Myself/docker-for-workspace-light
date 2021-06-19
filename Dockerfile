@@ -65,6 +65,6 @@ CMD ["--notebook-dir=/workdir"]
 
 #
 # docker builder prune
-# docker build -t codeformyself_excavator_ws_image .
+# docker build -t codeformyself_excavator_ws_image:2021.06 .
 # docker save codeformyself_excavator_ws_image -o codeformyself_excavator_ws_image.tar
 # 

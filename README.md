@@ -7,7 +7,7 @@ For the quickstart environment of excavator with jupyter-notebook,
 ## 1. Build docker image 
 run this command on your env.
 ```
-docker build -t codeformyself_excavator_ws_image .
+docker build -t codeformyself_excavator_ws_image:2021.06 .
 ```
 
 
