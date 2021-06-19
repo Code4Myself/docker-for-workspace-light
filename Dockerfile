@@ -19,6 +19,7 @@ RUN pip install --upgrade pip && \
     pip install Keras     && \
     pip install keplergl  && \
     pip install sodapy    && \
+    pip install shapely   && \
     pip install folium 
 
 # 
