@@ -1,28 +1,48 @@
 # docker for workspace
-workspace preparation with docker container
+workspace preparation with docker container withoug anaconda
 
 ## Summary
 For the quickstart environment of excavator with jupyter-notebook, 
 
-## 1. Build docker image 
-run this command on your env.
-```
-docker build -t codeformyself_excavator_ws_image:2021.06 .
+
+## Preparation 
+### 0. install docker 
+- please access to docker official, and try download & install 
+-- https://docs.docker.com/get-docker/
+
+### 1. clone this repository 
+```bash
+# clone repository
+git clone https://github.com/Code4Myself/docker-for-workspace-light.git
+
+# move to repository directory
+cd docker-for-workspace-light
 ```
 
-
-## 2. Run docker container
-
-for MacOS 
-```
-docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="`pwd`",dst=/workdir codeformyself_excavator_ws_image:2021.06 
-```
-
-for Windows
-```
-docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="%cd%",dst=/workdir codeformyself_excavator_ws_image:2021.06 
+### 2. Build docker image 
+- run this command on your env.
+```bash
+# build docker image
+docker build -t codeformyself_excavator_ws_light_image:2022.01 .
 ```
 
-## 3. access jupyter-notebook via browser
+### 3. launch docker container
+- move to working directory ( **Takeout** directory is located above directory )
+```bash 
+cd ../
+```
+
+- launch docker container
+-- for MacOS 
+```bash
+docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="`pwd`",dst=/workdir codeformyself_excavator_ws_light_image:2022.01
+```
+
+-- for Windows
+```bash
+docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="%cd%",dst=/workdir codeformyself_excavator_ws_light_image:2022.01
+```
+
+### 4. access jupyter-notebook via browser
 - http://localhost:8888/
 

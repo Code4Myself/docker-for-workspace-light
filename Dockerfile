@@ -1,8 +1,7 @@
 #
 #  base-image:tag 
 # 
-# FROM continuumio/anaconda3:latest
-FROM continuumio/anaconda3:2021.05
+FROM python:3.8
 
 #
 # time zone to Asia/Tokyo
@@ -13,14 +12,7 @@ ENV TZ=Asia/Tokyo
 # upgrade pip and instlal required python packages 
 # 
 RUN pip install --upgrade pip && \
-    pip install numpy     && \
-    pip install pandas    && \
-    pip install geopandas && \
-    pip install Keras     && \
-    pip install keplergl  && \
-    pip install sodapy    && \
-    pip install shapely   && \
-    pip install folium 
+    pip install jupyter geopandas pandas numpy seaborn matplotlib folium keplergl sodapy shapely
 
 # 
 # install rust, cargo, and additional codes for rust build
@@ -31,10 +23,9 @@ ENV PATH="/root/.cargo/bin:$PATH"
 #
 # install excavator
 #
-RUN apt update \
+RUN apt update -y \
     && apt install -y build-essential \
     && cargo install --git https://github.com/ichnion/excavator --branch develop
-
 
 #
 # create working directory for jupyter notebook 
@@ -65,6 +56,6 @@ CMD ["--notebook-dir=/workdir"]
 
 #
 # docker builder prune
-# docker build -t codeformyself_excavator_ws_image:2021.06 .
+# docker build -t codeformyself_excavator_ws_image:2022.01 .
 # docker save codeformyself_excavator_ws_image -o codeformyself_excavator_ws_image.tar
 # 
