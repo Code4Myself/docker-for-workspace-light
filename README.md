@@ -4,6 +4,7 @@ workspace preparation with docker container withoug anaconda
 ## Summary
 For the quickstart environment of excavator with jupyter-notebook, 
 
+---
 
 ## Preparation 
 ### 0. install docker 
@@ -26,23 +27,28 @@ cd docker-for-workspace-light
 docker build -t codeformyself_excavator_ws_light_image:2022.01 .
 ```
 
-### 3. launch docker container
+---
+
+## start working env
+
+### 1. launch docker container
+
 - move to working directory ( **Takeout** directory is located above directory )
 ```bash 
 cd ../
 ```
 
 - launch docker container
--- for MacOS 
 ```bash
+# for MacOS 
 docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="`pwd`",dst=/workdir codeformyself_excavator_ws_light_image:2022.01
 ```
 
--- for Windows
 ```bash
+# for Windows
 docker run -it -p 8888:8888 --rm --name codeformyself_excavator_ws_container --mount type=bind,src="%cd%",dst=/workdir codeformyself_excavator_ws_light_image:2022.01
 ```
 
-### 4. access jupyter-notebook via browser
+### 2. access jupyter-notebook via browser
 - http://localhost:8888/
 
